@@ -1,0 +1,33 @@
+start =
+	_ a:expression _
+		{ return a; }
+
+expression =
+	atom
+	/ quote
+	/ list
+
+spExpression =
+	_ a:expression { return a; }
+
+comment =
+	";;" (!"\n" .)*
+
+atom =
+	a:validChar+ {
+		var aa = a.join("");
+		if( isNaN(aa) ) return aa;
+		else return parseFloat( aa );
+	}
+
+validChar =
+	[0-9a-zA-Z_?!+\-=@#$%^&*/.><]
+
+_ =
+	( [ \t\r\n] / comment )*
+
+quote =
+	"'" a:expression { return ["quote",a]; }
+
+list =
+	'(' a:spExpression* _ ')' { return a; }

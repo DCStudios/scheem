@@ -1,0 +1,30 @@
+;;==================================================;;
+;;                  SCHEEM v0.7						;;
+;;==================================================;;
+;;	Author: Cedrik Dubois							;;
+;;--------------------------------------------------;;
+;;													;;
+;;	What it currently supports:						;;
+;;		- Quotes: Stop from evaluing value			;;
+;;		- Begin: Start of program					;;
+;;		- define: Define a variable					;;
+;;      - set!: Set a value to a variable			;;
+;;		- operators: +,-,*,/						;;
+;;		- comparision: =,<,> returns #f #t			;;
+;;		- cons: Add value at start of list			;;
+;;		- car: Get first value of list				;;
+;;		- cdr: Get all values but first of list 	;;
+;;		- if: executes 2nd param if #t, otherwise	;;
+;;			  executes 3rd param if #f.				;;
+;;													;;
+;;==================================================;;
+
+(Begin
+(define x '(1 2 3 4 5))
+(define y
+	(cons 6 x))
+(if
+	(= (car y) 6)
+	'PASSED
+	'FAILED)
+(5))

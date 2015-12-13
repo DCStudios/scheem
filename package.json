@@ -1,0 +1,11 @@
+{
+  "name": "newlang_tut",
+  "version": "0.0.0",
+  "description": "Tutorials files about creating a new programming language",
+  "main": "parser.js",
+  "scripts": {
+    "test": "node parser.js"
+  },
+  "author": "Cedrik Dubois ( CedSharp )",
+  "license": "BSD-2-Clause"
+}
